@@ -1,102 +1,237 @@
+import SectionContainer from "@/component/container";
 import Image from "next/image";
 
 export default function Home() {
+  const route = [
+    {
+      title: "MyProfile",
+      href: "",
+      component: (
+        <div className="space-y-1">
+          <div>김조은</div>
+          <div>1995.08.01</div>
+          <div>010-3368-2084</div>
+          <div>whdms3368@gmail.com</div>
+          <div>서울시 영등포구</div>
+        </div>
+      ),
+    },
+    {
+      title: "Skills",
+      href: "",
+      component: (
+        <div className="flex flex-col gap-2">
+          <div className="rounded-xl bg-white/10 h-[200px] w-full"></div>
+          <div className="grid grid-cols-3 gap-2">
+            <div className="col-span-1 bg-white/10 h-[200px] rounded-xl"></div>
+            <div className="col-span-1 bg-white/10 h-[200px] rounded-xl"></div>
+            <div className="col-span-1 bg-white/10 h-[200px] rounded-xl"></div>
+          </div>
+        </div>
+      ),
+    },
+    {
+      title: "Archiving",
+      href: "",
+      component: (
+        <div className="bg-white/10 h-[calc(100dvh-300px)] w-full"></div>
+      ),
+    },
+    {
+      title: "Projects",
+      href: "",
+      component: (
+        <div className="pb-20">
+          <section className="grid grid-cols-3 gap-2">
+            <div className="bg-white/10  aspect-square col-span-1">1</div>
+            <div className="bg-white/10  aspect-square col-span-1">1</div>
+            <div className="bg-white/10  aspect-square col-span-1">1</div>
+            <div className="bg-white/10  aspect-square col-span-1">1</div>
+            <div className="bg-white/10  aspect-square col-span-1">1</div>
+            <div className="bg-white/10  aspect-square col-span-1">1</div>
+          </section>
+          <div className="my-10">
+            <button>더보기</button>
+          </div>
+        </div>
+      ),
+    },
+    {
+      title: "Career",
+      href: "",
+      component: (
+        <div>
+          <section className="space-y-10">
+            <div>
+              <h4 className="text-2xl font-semibold">티디아이</h4>
+              <p className="opacity-70">2024.08.02 ~ 재직중</p>
+              <p>
+                Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                Eligendi labore voluptatem accusamus tempore animi illum
+                excepturi culpa doloribus, unde perferendis nostrum. Nisi
+                veritatis dolor minus similique quis suscipit? Consequatur,
+                debitis.
+              </p>
+              <ul className="mt-5">
+                <li className="border-l-3 border-white pl-4 pb-10">
+                  <h5 className="bg-white text-black px-2 py-1 rounded inline-block mb-2">
+                    000프로젝트
+                  </h5>
+                  <p>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                    Nostrum, quas tempora praesentium beatae ipsam temporibus
+                    fugiat labore optio provident adipisci rerum aliquid, porro
+                    sapiente earum! Autem quod impedit maxime laborum.
+                  </p>
+                </li>
+                <li className="border-l-3 border-white pl-4 pb-10">
+                  <h5 className="bg-white text-black px-2 py-1 rounded inline-block mb-2">
+                    000프로젝트
+                  </h5>
+                  <p>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                    Nostrum, quas tempora praesentium beatae ipsam temporibus
+                    fugiat labore optio provident adipisci rerum aliquid, porro
+                    sapiente earum! Autem quod impedit maxime laborum.
+                  </p>
+                </li>
+                <li className="border-l-3 border-white pl-4 pb-10">
+                  <h5 className="bg-white text-black px-2 py-1 rounded inline-block mb-2">
+                    000프로젝트
+                  </h5>
+                  <p>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                    Nostrum, quas tempora praesentium beatae ipsam temporibus
+                    fugiat labore optio provident adipisci rerum aliquid, porro
+                    sapiente earum! Autem quod impedit maxime laborum.
+                  </p>
+                </li>
+              </ul>
+            </div>
+            <div>
+              <h4 className="text-2xl font-semibold">티디아이</h4>
+              <p className="opacity-70">2024.08.02 ~ 재직중</p>
+              <p>
+                Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                Eligendi labore voluptatem accusamus tempore animi illum
+                excepturi culpa doloribus, unde perferendis nostrum. Nisi
+                veritatis dolor minus similique quis suscipit? Consequatur,
+                debitis.
+              </p>
+              <ul className="mt-5">
+                <li className="border-l-3 border-white pl-4 pb-10">
+                  <h5 className="bg-white text-black px-2 py-1 rounded inline-block mb-2">
+                    000프로젝트
+                  </h5>
+                  <p>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                    Nostrum, quas tempora praesentium beatae ipsam temporibus
+                    fugiat labore optio provident adipisci rerum aliquid, porro
+                    sapiente earum! Autem quod impedit maxime laborum.
+                  </p>
+                </li>
+                <li className="border-l-3 border-white pl-4 pb-10">
+                  <h5 className="bg-white text-black px-2 py-1 rounded inline-block mb-2">
+                    000프로젝트
+                  </h5>
+                  <p>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                    Nostrum, quas tempora praesentium beatae ipsam temporibus
+                    fugiat labore optio provident adipisci rerum aliquid, porro
+                    sapiente earum! Autem quod impedit maxime laborum.
+                  </p>
+                </li>
+                <li className="border-l-3 border-white pl-4 pb-10">
+                  <h5 className="bg-white text-black px-2 py-1 rounded inline-block mb-2">
+                    000프로젝트
+                  </h5>
+                  <p>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                    Nostrum, quas tempora praesentium beatae ipsam temporibus
+                    fugiat labore optio provident adipisci rerum aliquid, porro
+                    sapiente earum! Autem quod impedit maxime laborum.
+                  </p>
+                </li>
+              </ul>
+            </div>
+          </section>
+        </div>
+      ),
+    },
+  ];
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm/6 text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-[family-name:var(--font-geist-mono)] font-semibold">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
+    <div>
+      <header className="bg-black z-[999] fixed w-full h-[60px] text-base text-white flex items-center justify-between px-4 py-2">
+        <div className="">오늘 기분을 어떠세요? ☀️</div>
+        <div>
+          <ul className="flex items-center">
+            {route.map((item, index) => {
+              return (
+                <li
+                  className="px-3 py-2 cursor-pointer hover:opacity-80"
+                  key={index}
+                >
+                  {item.title}
+                </li>
+              );
+            })}
+          </ul>
+        </div>
+      </header>
+      <main>
+        <SectionContainer className="flex jusitfy-center items-center h-dvh relative overflow-hidden w-dvw">
+          <div className="max-w-[800px] m-auto text-center relative z-[2]">
+            <h1 className="text-[72px] font-bold leading-[1] mb-5">
+              Hello, <br /> My name is Kimjoeun
+            </h1>
+            <p className="text-lg">
+              Bring blockchain to the people. Solana supports experiences for{" "}
+              <br />
+              power users, new consumers, and everyone in between.
+            </p>
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
+            <div className="flex gap-2 items-center justify-center mt-10">
+              <button className="rounded-full px-6 py-3 bg-purple-700 hover:text-black hover:bg-white">
+                CONTACT
+              </button>
+              <button className="rounded-full px-6 py-3 bg-blue-700 hover:text-black hover:bg-white">
+                BLOG
+              </button>
+              <button className="rounded-full px-6 py-3 bg-transparent border-1 hover:text-black hover:bg-white">
+                GIT
+              </button>
+            </div>
+          </div>
+          <article>
             <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
+              className="absolute -top-10 -right-[600px]"
+              src={"/image/source.webp"}
+              alt=""
+              width={1357}
+              height={708}
             />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+            <Image
+              className="absolute -top-[200px] -left-[700px]"
+              src={"/image/source.webp"}
+              alt=""
+              width={1357}
+              height={708}
+            />
+          </article>
+        </SectionContainer>
+
+        <div className="!space-y-20">
+          {route.map((item, index) => {
+            return (
+              <SectionContainer key={index} isMargin title={item.title}>
+                {item.component}
+              </SectionContainer>
+            );
+          })}
         </div>
       </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
+      <footer className="py-20 text-center font-thin text-white/50">
+        2025 @ create by .jenny
       </footer>
     </div>
   );
