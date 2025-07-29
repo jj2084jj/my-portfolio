@@ -1,5 +1,9 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import "react-notion-x/src/styles.css";
+import Header from "@/component/00_layout/header";
+import Footer from "@/component/00_layout/footer";
+import ClientLayout from "@/component/00_layout/client-layout";
 
 export const metadata: Metadata = {
   title: "Joeum kim 프론트엔드 포트폴리오",
@@ -13,7 +17,13 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`bg-[#121212] text-white`}>{children}</body>
+      <body className={`bg-[#121212] text-white`}>
+        <ClientLayout>
+          <Header />
+          <main className="min-h-[calc(100dvh-120px)]">{children}</main>
+          <Footer />
+        </ClientLayout>
+      </body>
     </html>
   );
 }
