@@ -1,8 +1,6 @@
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  reactStrictMode: false,
-  swcMinify: true,
   images: {
     remotePatterns: [
       {
@@ -15,8 +13,8 @@ const nextConfig = {
   async rewrites() {
     return [
       {
-        source: "/v1/:path*",
-        destination: `${process.env.NEXT_PUBLIC_NOTION_API_URL}/v1/:path*`,
+        source: "/:path*",
+        destination: `${process.env.NEXT_PUBLIC_NOTION_API_URL}/:path*`,
       },
     ];
   },
