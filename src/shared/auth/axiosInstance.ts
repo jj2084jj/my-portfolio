@@ -9,7 +9,6 @@ const axiosInstance = axios.create({
 
 axiosInstance.interceptors.request.use(
   (config) => {
-    console.log(config)
     config.headers.Authorization = `Bearer ${process.env.NEXT_PUBLIC_NOTION_API_KEY}`;
     config.headers["Notion-Version"] = "2022-06-28";
     
