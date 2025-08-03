@@ -1,5 +1,5 @@
 import Image from "next/image";
-import SectionContainer from "../container";
+import SectionContainer from "../../shared/ui/container";
 import { Route } from "@/app/constants";
 
 export default function MainContainer() {
