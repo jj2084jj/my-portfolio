@@ -7,7 +7,6 @@ import SectionContainer from "@/shared/ui/container";
 export default function ProjectsContainer() {
   const { data } = useFetchProjects();
 
-  console.log(data);
   if (!data) return <></>;
   return (
     
