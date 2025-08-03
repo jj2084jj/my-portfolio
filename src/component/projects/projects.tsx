@@ -13,14 +13,14 @@ export default function ProjectsContainer() {
     
       
     <SectionContainer className="max-w-[1080px] my-10 m-auto ">
-      <h1 className="text-3xl font-bold mb-10 px-4">Jenny's 프로젝트 소개</h1>
+      <h1 className="text-3xl font-bold mb-10 px-4">Jenny&apos;s 프로젝트 소개</h1>
       <section className="grid grid-cols-1 md:grid-cols-2 m-auto w-[calc(100%-32px)] lg:grid-cols-3 gap-6">
       {data.map((project,index) => {
         return <Card key={index} className="group">
           <Card.Title className="flex justify-between items-center"><div >{project.name}{project.UIUX && <span className="text-sm text-gray-400 font-normal ml-2">({project.UIUX})</span>}</div>
           <div className="flex justify-between">
               <div className="flex gap-2">
-                {project.techStack.map((item:any,index:number)=>{
+                {project.techStack.map((item: { name: string; color: string }, index: number) => {
                   return <div className={`text-sm px-2 opacity-80 rounded-sm text-white `} style={{
                     backgroundColor:item.color
                   }} key={index}>{item.name}</div>
