@@ -20,7 +20,7 @@ export default function RootLayout({
       <body className={`bg-[#121212] text-white`}>
         <ClientLayout>
           <Header />
-          <main className="min-h-[calc(100dvh-120px)]">{children}</main>
+          <main className="min-h-[calc(100dvh-120px)] pt-[60px]">{children}</main>
           <Footer />
         </ClientLayout>
       </body>
