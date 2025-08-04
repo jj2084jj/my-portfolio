@@ -1,6 +1,7 @@
-import axiosInstance from '@/shared/auth/axiosInstance';
-import { useQuery } from '@tanstack/react-query';
-import { useEffect, useState } from 'react';
+import { useEffect, useState } from "react";
+
+import axiosInstance from "@/shared/auth/axiosInstance";
+import { useQuery } from "@tanstack/react-query";
 
 interface NotionProject {
   properties: {
@@ -31,50 +32,62 @@ interface Project {
 }
 
 const fetchNotionProjects = async () => {
-  const res = await axiosInstance.post('/api/notion', {});
+  const res = await axiosInstance.post("/api/notion", {});
   return res.data;
 };
 
 export const useFetchProjects = () => {
   const [projects, setProjects] = useState<Project[]>([]);
   const { data, isLoading, error } = useQuery({
-    queryKey: ['useFetchProjects'],
+    queryKey: ["useFetchProjects"],
     queryFn: fetchNotionProjects,
   });
 
   useEffect(() => {
     if (data && data.results && data.results.length > 0) {
       const reData = data.results.map((project: NotionProject) => {
-        const name = project.properties.project.title[0].plain_text;
+        const name = project.properties.project.title[0]?.plain_text;
         // const created_time = project.properties.created_time?.split('T')[0] || '';
-        const information = project.properties.information.rich_text[0]?.plain_text || '';
-        const contribution = project.properties.contribution.rich_text[0]?.plain_text || '';
-        const URL = project.properties.URL.rich_text[0]?.plain_text || '';
-        const image = project.properties.image.rich_text[0]?.plain_text || '';
-        const techStack = project.properties.techStack.multi_select.map((item) => {
-          return {
-            name: item.name,
-            color: item.color
-          };
-        });
+        const information =
+          project.properties.information.rich_text[0]?.plain_text || "";
+        const contribution =
+          project.properties.contribution.rich_text[0]?.plain_text || "";
+        const URL = project.properties.URL.rich_text[0]?.plain_text || "";
+        const image = project.properties.image.rich_text[0]?.plain_text || "";
+        const techStack = project.properties.techStack.multi_select.map(
+          (item) => {
+            return {
+              name: item.name,
+              color: item.color,
+            };
+          }
+        );
 
         const skill = project.properties.skill.multi_select.map((item) => {
           return {
             name: item.name,
-            color: item.color
+            color: item.color,
           };
         });
         const API = project.properties.API.multi_select.map((item) => {
           return {
             name: item.name,
-            color: item.color
+            color: item.color,
           };
         });
 
-        const UIUX = project.properties.UIUX.select?.name || '';
+        const UIUX = project.properties.UIUX.select?.name || "";
 
         return {
-          name, information, techStack, contribution, URL, skill, API, UIUX, image
+          name,
+          information,
+          techStack,
+          contribution,
+          URL,
+          skill,
+          API,
+          UIUX,
+          image,
         };
       });
       setProjects(reData);
