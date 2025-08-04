@@ -14,12 +14,12 @@ export default function SectionContainer({
   return (
     <section
       className={`${className ?? ""} ${
-        isMargin && "max-w-[1080px] m-auto px-4"
+        isMargin && "m-auto max-w-[1080px] px-4"
       } w-full`}
     >
       {title && (
-        <div className="border-b border-gray-200 mb-4">
-          <h2 className="leading-[2] font-semibold text-3xl">#{title}</h2>
+        <div className="mb-4 border-b border-gray-200">
+          <h2 className="text-3xl leading-[2] font-semibold">#{title}</h2>
         </div>
       )}
       {children}

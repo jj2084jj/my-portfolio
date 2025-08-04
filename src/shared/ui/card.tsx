@@ -1,17 +1,61 @@
-const Card = ({children,className}:{children:React.ReactNode,className?:string}) => {
-  return <div className={`hover:translate-y-[-5px] transition-all duration-300 flex flex-col justify-between border-1 border-gray-500 rounded-xl ${className??''}`}>{children}</div>;
+const Card = ({
+  children,
+  className,
+}: {
+  children: React.ReactNode;
+  className?: string;
+}) => {
+  return (
+    <div
+      className={`flex flex-col justify-between rounded-xl border-1 border-gray-500 transition-all duration-300 hover:translate-y-[-5px] ${className ?? ""}`}
+    >
+      {children}
+    </div>
+  );
 };
 
-const CardBody = ({children,className}:{children:React.ReactNode,className?:string}) => {
-  return <div className={`px-3 py-4 text-base min-h-[100px] ${className??''}`}>{children}</div>;
+const CardBody = ({
+  children,
+  className,
+}: {
+  children: React.ReactNode;
+  className?: string;
+}) => {
+  return (
+    <div className={`min-h-[100px] px-3 py-4 text-base ${className ?? ""}`}>
+      {children}
+    </div>
+  );
 };
 
-const CardTitle = ({children,className}:{children:React.ReactNode,className?:string}) => {
-  return <div className={`text-lg border-gray-500 font-bold p-3 border-b-1 ${className??''}`}>{children}</div>;
+const CardTitle = ({
+  children,
+  className,
+}: {
+  children: React.ReactNode;
+  className?: string;
+}) => {
+  return (
+    <div
+      className={`border-b-1 border-gray-500 p-3 text-lg font-bold ${className ?? ""}`}
+    >
+      {children}
+    </div>
+  );
 };
 
-const CardFooter = ({children,className}:{children:React.ReactNode,className?:string}) => {
-  return <div className={`p-3 border-t-1 border-gray-500 ${className??''}`}>{children}</div>;
+const CardFooter = ({
+  children,
+  className,
+}: {
+  children: React.ReactNode;
+  className?: string;
+}) => {
+  return (
+    <div className={`border-t-1 border-gray-500 p-3 ${className ?? ""}`}>
+      {children}
+    </div>
+  );
 };
 
 Card.Title = CardTitle;

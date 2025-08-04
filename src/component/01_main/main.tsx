@@ -1,13 +1,15 @@
 import Image from "next/image";
-import SectionContainer from "../../shared/ui/container";
+
 import { Route } from "@/app/constants";
+
+import SectionContainer from "../../shared/ui/container";
 
 export default function MainContainer() {
   return (
     <>
-      <SectionContainer className="flex jusitfy-center items-center h-dvh relative overflow-hidden w-dvw">
-        <div className="max-w-[800px] m-auto text-center relative z-[2]">
-          <h1 className="text-[72px] font-bold leading-[1] mb-5">
+      <SectionContainer className="jusitfy-center relative flex h-dvh w-dvw items-center overflow-hidden">
+        <div className="relative z-[2] m-auto max-w-[800px] text-center">
+          <h1 className="mb-5 text-[72px] leading-[1] font-bold">
             Hello, <br /> My name is Kimjoeun
           </h1>
           <p className="text-lg">
@@ -16,14 +18,14 @@ export default function MainContainer() {
             power users, new consumers, and everyone in between.
           </p>
 
-          <div className="flex gap-2 items-center justify-center mt-10">
-            <button className="rounded-full px-6 py-3 bg-purple-700 hover:text-black hover:bg-white">
+          <div className="mt-10 flex items-center justify-center gap-2">
+            <button className="rounded-full bg-purple-700 px-6 py-3 hover:bg-white hover:text-black">
               CONTACT
             </button>
-            <button className="rounded-full px-6 py-3 bg-blue-700 hover:text-black hover:bg-white">
+            <button className="rounded-full bg-blue-700 px-6 py-3 hover:bg-white hover:text-black">
               BLOG
             </button>
-            <button className="rounded-full px-6 py-3 bg-transparent border-1 hover:text-black hover:bg-white">
+            <button className="rounded-full border-1 bg-transparent px-6 py-3 hover:bg-white hover:text-black">
               GIT
             </button>
           </div>

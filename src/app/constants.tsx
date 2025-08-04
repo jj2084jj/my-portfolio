@@ -17,11 +17,11 @@ export const Route = [
     href: "",
     component: (
       <div className="flex flex-col gap-2">
-        <div className="rounded-xl bg-white/10 h-[200px] w-full"></div>
+        <div className="h-[200px] w-full rounded-xl bg-white/10"></div>
         <div className="grid grid-cols-3 gap-2">
-          <div className="col-span-1 bg-white/10 h-[200px] rounded-xl"></div>
-          <div className="col-span-1 bg-white/10 h-[200px] rounded-xl"></div>
-          <div className="col-span-1 bg-white/10 h-[200px] rounded-xl"></div>
+          <div className="col-span-1 h-[200px] rounded-xl bg-white/10"></div>
+          <div className="col-span-1 h-[200px] rounded-xl bg-white/10"></div>
+          <div className="col-span-1 h-[200px] rounded-xl bg-white/10"></div>
         </div>
       </div>
     ),
@@ -30,21 +30,21 @@ export const Route = [
     title: "Archiving",
     href: "",
     component: (
-      <div className="bg-white/10 h-[calc(100dvh-300px)] w-full"></div>
+      <div className="h-[calc(100dvh-300px)] w-full bg-white/10"></div>
     ),
   },
   {
     title: "Projects",
-    href: "",
+    href: "project",
     component: (
       <div className="pb-20">
         <section className="grid grid-cols-3 gap-2">
-          <div className="bg-white/10  aspect-square col-span-1">1</div>
-          <div className="bg-white/10  aspect-square col-span-1">1</div>
-          <div className="bg-white/10  aspect-square col-span-1">1</div>
-          <div className="bg-white/10  aspect-square col-span-1">1</div>
-          <div className="bg-white/10  aspect-square col-span-1">1</div>
-          <div className="bg-white/10  aspect-square col-span-1">1</div>
+          <div className="col-span-1 aspect-square bg-white/10">1</div>
+          <div className="col-span-1 aspect-square bg-white/10">1</div>
+          <div className="col-span-1 aspect-square bg-white/10">1</div>
+          <div className="col-span-1 aspect-square bg-white/10">1</div>
+          <div className="col-span-1 aspect-square bg-white/10">1</div>
+          <div className="col-span-1 aspect-square bg-white/10">1</div>
         </section>
         <div className="my-10">
           <button>더보기</button>
@@ -68,8 +68,8 @@ export const Route = [
               similique quis suscipit? Consequatur, debitis.
             </p>
             <ul className="mt-5">
-              <li className="border-l-3 border-white pl-4 pb-10">
-                <h5 className="bg-white text-black px-2 py-1 rounded inline-block mb-2">
+              <li className="border-l-3 border-white pb-10 pl-4">
+                <h5 className="mb-2 inline-block rounded bg-white px-2 py-1 text-black">
                   000프로젝트
                 </h5>
                 <p>
@@ -79,8 +79,8 @@ export const Route = [
                   sapiente earum! Autem quod impedit maxime laborum.
                 </p>
               </li>
-              <li className="border-l-3 border-white pl-4 pb-10">
-                <h5 className="bg-white text-black px-2 py-1 rounded inline-block mb-2">
+              <li className="border-l-3 border-white pb-10 pl-4">
+                <h5 className="mb-2 inline-block rounded bg-white px-2 py-1 text-black">
                   000프로젝트
                 </h5>
                 <p>
@@ -90,8 +90,8 @@ export const Route = [
                   sapiente earum! Autem quod impedit maxime laborum.
                 </p>
               </li>
-              <li className="border-l-3 border-white pl-4 pb-10">
-                <h5 className="bg-white text-black px-2 py-1 rounded inline-block mb-2">
+              <li className="border-l-3 border-white pb-10 pl-4">
+                <h5 className="mb-2 inline-block rounded bg-white px-2 py-1 text-black">
                   000프로젝트
                 </h5>
                 <p>
@@ -113,8 +113,8 @@ export const Route = [
               similique quis suscipit? Consequatur, debitis.
             </p>
             <ul className="mt-5">
-              <li className="border-l-3 border-white pl-4 pb-10">
-                <h5 className="bg-white text-black px-2 py-1 rounded inline-block mb-2">
+              <li className="border-l-3 border-white pb-10 pl-4">
+                <h5 className="mb-2 inline-block rounded bg-white px-2 py-1 text-black">
                   000프로젝트
                 </h5>
                 <p>
@@ -124,8 +124,8 @@ export const Route = [
                   sapiente earum! Autem quod impedit maxime laborum.
                 </p>
               </li>
-              <li className="border-l-3 border-white pl-4 pb-10">
-                <h5 className="bg-white text-black px-2 py-1 rounded inline-block mb-2">
+              <li className="border-l-3 border-white pb-10 pl-4">
+                <h5 className="mb-2 inline-block rounded bg-white px-2 py-1 text-black">
                   000프로젝트
                 </h5>
                 <p>
@@ -135,8 +135,8 @@ export const Route = [
                   sapiente earum! Autem quod impedit maxime laborum.
                 </p>
               </li>
-              <li className="border-l-3 border-white pl-4 pb-10">
-                <h5 className="bg-white text-black px-2 py-1 rounded inline-block mb-2">
+              <li className="border-l-3 border-white pb-10 pl-4">
+                <h5 className="mb-2 inline-block rounded bg-white px-2 py-1 text-black">
                   000프로젝트
                 </h5>
                 <p>
