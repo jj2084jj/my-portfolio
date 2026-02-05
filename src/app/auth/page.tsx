@@ -1,10 +1,11 @@
 "use client";
 
+import { Suspense } from "react";
 import { useEffect, useState } from "react";
 
 import { useRouter, useSearchParams } from "next/navigation";
 
-export default function AuthPage() {
+function AuthContent() {
   const [status, setStatus] = useState<"loading" | "success" | "error">(
     "loading"
   );
@@ -133,5 +134,19 @@ export default function AuthPage() {
         </div>
       </div>
     </div>
+  );
+}
+
+export default function AuthPage() {
+  return (
+    <Suspense
+      fallback={
+        <div className="flex min-h-screen items-center justify-center bg-gray-50">
+          <div className="h-12 w-12 animate-spin rounded-full border-b-2 border-blue-600"></div>
+        </div>
+      }
+    >
+      <AuthContent />
+    </Suspense>
   );
 }
