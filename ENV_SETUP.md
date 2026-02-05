@@ -18,14 +18,14 @@ THREADS_REDIRECT_URI=https://jenny-my-portfolio.netlify.app/
 4. OAuth 설정에서 다음 정보 확인:
    - **App ID** → `THREADS_CLIENT_ID`
    - **App Secret** → `THREADS_CLIENT_SECRET`
-   - **Redirect URIs** → `https://jenny-my-portfolio.netlify.app/` 추가
+   - **Redirect URIs** → `https://jenny-my-portfolio.netlify.app/auth` 추가
 
 ## 3. OAuth URL 예시
 
 ```
 https://threads.net/oauth/authorize
 ?client_id=YOUR_CLIENT_ID
-&redirect_uri=https://jenny-my-portfolio.netlify.app/
+&redirect_uri=https://jenny-my-portfolio.netlify.app/auth
 &scope=threads_basic,threads_content_publish
 &response_type=code
 ```

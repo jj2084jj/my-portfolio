@@ -1,4 +1,4 @@
-import { NextRequest, NextResponse } from 'next/server';
+import { NextRequest, NextResponse } from "next/server";
 
 export async function POST(request: NextRequest) {
   try {
@@ -6,42 +6,47 @@ export async function POST(request: NextRequest) {
 
     if (!code) {
       return NextResponse.json(
-        { error: '인증 코드가 필요합니다.' },
+        { error: "인증 코드가 필요합니다." },
         { status: 400 }
       );
     }
 
     const clientId = process.env.THREADS_CLIENT_ID;
     const clientSecret = process.env.THREADS_CLIENT_SECRET;
-    const redirectUri = process.env.THREADS_REDIRECT_URI || 'https://jenny-my-portfolio.netlify.app/';
+    const redirectUri =
+      process.env.THREADS_REDIRECT_URI ||
+      "https://jenny-my-portfolio.netlify.app/auth";
 
     if (!clientId || !clientSecret) {
       return NextResponse.json(
-        { error: '서버 설정 오류: 환경 변수가 설정되지 않았습니다.' },
+        { error: "서버 설정 오류: 환경 변수가 설정되지 않았습니다." },
         { status: 500 }
       );
     }
 
     // Threads API에 토큰 교환 요청
-    const tokenResponse = await fetch('https://graph.threads.net/oauth/access_token', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/x-www-form-urlencoded',
-      },
-      body: new URLSearchParams({
-        client_id: clientId,
-        client_secret: clientSecret,
-        grant_type: 'authorization_code',
-        redirect_uri: redirectUri,
-        code: code,
-      }),
-    });
+    const tokenResponse = await fetch(
+      "https://graph.threads.net/oauth/access_token",
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/x-www-form-urlencoded",
+        },
+        body: new URLSearchParams({
+          client_id: clientId,
+          client_secret: clientSecret,
+          grant_type: "authorization_code",
+          redirect_uri: redirectUri,
+          code: code,
+        }),
+      }
+    );
 
     const tokenData = await tokenResponse.json();
 
     if (!tokenResponse.ok) {
       return NextResponse.json(
-        { error: '토큰 교환 실패', details: tokenData },
+        { error: "토큰 교환 실패", details: tokenData },
         { status: 400 }
       );
     }
@@ -53,11 +58,10 @@ export async function POST(request: NextRequest) {
       expires_in: tokenData.expires_in,
       token_type: tokenData.token_type,
     });
-
   } catch (error) {
-    console.error('Threads OAuth error:', error);
+    console.error("Threads OAuth error:", error);
     return NextResponse.json(
-      { error: '서버 내부 오류가 발생했습니다.' },
+      { error: "서버 내부 오류가 발생했습니다." },
       { status: 500 }
     );
   }
